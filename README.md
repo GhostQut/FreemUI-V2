@@ -21,8 +21,8 @@
 ## Example
 ```lua
 -- init
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
-local venyx = library.new("Venyx", 5013109572)
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostQut/FreemUI/main/Source.lua"))()
+local freem = library.new("Freem", 5013109572)
 
 -- themes
 local themes = {
@@ -35,7 +35,7 @@ local themes = {
 }
 
 -- first page
-local page = venyx:addPage("Test", 5012544693)
+local page = freem:addPage("Test", 5012544693)
 local section1 = page:addSection("Section 1")
 local section2 = page:addSection("Section 2")
 
@@ -49,13 +49,13 @@ section1:addTextbox("Notification", "Default", function(value, focusLost)
 	print("Input", value)
 
 	if focusLost then
-		venyx:Notify("Title", value)
+		freem:Notify("Title", value)
 	end
 end)
 
 section2:addKeybind("Toggle Keybind", Enum.KeyCode.One, function()
 	print("Activated Keybind")
-	venyx:toggle()
+	freem:toggle()
 end, function()
 	print("Changed Keybind")
 end)
@@ -71,17 +71,17 @@ end)
 section2:addButton("Button")
 
 -- second page
-local theme = venyx:addPage("Theme", 5012544693)
+local theme = freem:addPage("Theme", 5012544693)
 local colors = theme:addSection("Colors")
 
 for theme, color in pairs(themes) do -- all in one theme changer, i know, im cool
 	colors:addColorPicker(theme, color, function(color3)
-		venyx:setTheme(theme, color3)
+		freem:setTheme(theme, color3)
 	end)
 end
 
 -- load
-venyx:SelectPage(venyx.pages[1], true)
+freem:SelectPage(freem.pages[1], true)
 ```
 
 
