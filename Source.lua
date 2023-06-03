@@ -6,6 +6,7 @@ local mouse = player:GetMouse()
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local tween = game:GetService("TweenService")
+local HttpService = game:GetService("HttpService")
 local tweeninfo = TweenInfo.new
 
 -- additional
@@ -21,6 +22,10 @@ local themes = {
 	DarkContrast = Color3.fromRGB(14, 14, 14),  
 	TextColor = Color3.fromRGB(255, 255, 255)
 }
+
+local pfp = "https://www.roblox.com/headshot-thumbnail/image?userId=".. player.UserId .."&width=420&height=420&format=png"
+local user
+
 
 do
 	function utility:Create(instance, properties, children)
@@ -264,6 +269,18 @@ do
 						})
 					})
 				}),
+				utility:Create("ImageLabel", {
+					Name = "OffBar",
+					BackgroundTransparency = 1,
+					ClipsDescendants = true,
+					Size = UDim2.new(1, 0, 0, 38),
+					ZIndex = 5,
+					Image = "rbxassetid://4595286933",
+					Position = UDim2.new(0, 0, 0, 10),
+					ImageColor3 = themes.Accent,
+					ScaleType = Enum.ScaleType.Slice,
+					SliceCenter = Rect.new(4, 4, 296, 296)
+				},
 				utility:Create("ImageLabel", {
 					Name = "TopBar",
 					BackgroundTransparency = 1,
