@@ -6692,6 +6692,6 @@ do
     end
 end
 
-print("Atlas UI Library v"..VERSION.." by RoadToGlory#9879 has initiated")
+print("FreemUI Library v"..VERSION.." by GhostQut#5396 has initiated")
 
 return Library
