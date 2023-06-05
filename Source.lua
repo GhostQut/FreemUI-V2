@@ -2138,14 +2138,14 @@ do
                     local checkMark = btn.ImageLabel
                     local text = btn.TextLabel
                     checkMark.Visible = false
-                    text.Text = "Copy Invite"
+                    text.Text = "Get Key"
                     table.insert(_connections,utility:HandleGradientButton(btn,function()
-                        if text.Text == "Copy Invite" then
+                        if text.Text == "Get Key" then
                             text.Text = "Copied"
                             checkMark.Visible = true
                             setclipboard(info.Discord or "No discord invite")
                             wait(1.5)
-                            text.Text = "Copy Invite"
+                            text.Text = "Get Key"
                             checkMark.Visible = false
                         end
                     end))
