@@ -45,7 +45,7 @@ Library.Icons = {
 
 local old_warn = warn
 local warn = function(...)
-    old_warn("[ATLAS]",...)
+    old_warn("[FREEM]",...)
 end
 
 -- UTILITY
@@ -1021,7 +1021,7 @@ do
         local function makeLibrary()
             -- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
             local Converted = {
-                ["_Atlas"] = Instance.new("ScreenGui");
+                ["_Freem"] = Instance.new("ScreenGui");
                 ["_UI_Library"] = Instance.new("Folder");
                 ["_Name"] = Instance.new("StringValue");
                 ["_Creator"] = Instance.new("StringValue");
@@ -1176,25 +1176,25 @@ do
 
             --Properties
 
-            Converted["_Atlas"].DisplayOrder = 99
-            Converted["_Atlas"].IgnoreGuiInset = true
-            Converted["_Atlas"].ResetOnSpawn = false
-            Converted["_Atlas"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-            Converted["_Atlas"].Name = "Atlas"
-            Converted["_Atlas"].Parent = game:GetService("CoreGui")
+            Converted["_Freem"].DisplayOrder = 99
+            Converted["_Freem"].IgnoreGuiInset = true
+            Converted["_Freem"].ResetOnSpawn = false
+            Converted["_Freem"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+            Converted["_Freem"].Name = "Freem"
+            Converted["_Freem"].Parent = game:GetService("CoreGui")
 
             Converted["_UI_Library"].Name = "UI_Library"
-            Converted["_UI_Library"].Parent = Converted["_Atlas"]
+            Converted["_UI_Library"].Parent = Converted["_Freem"]
 
-            Converted["_Name"].Value = "Atlas UI Library"
+            Converted["_Name"].Value = "FreemUI Library"
             Converted["_Name"].Name = "Name"
             Converted["_Name"].Parent = Converted["_UI_Library"]
 
-            Converted["_Creator"].Value = "RoadToGlory#9879"
+            Converted["_Creator"].Value = "GhostQut#5396"
             Converted["_Creator"].Name = "Creator"
             Converted["_Creator"].Parent = Converted["_UI_Library"]
 
-            Converted["_Discord"].Value = "https://discord.gg/xu5dDS3Pb9"
+            Converted["_Discord"].Value = ""
             Converted["_Discord"].Name = "Discord"
             Converted["_Discord"].Parent = Converted["_UI_Library"]
 
@@ -1204,7 +1204,7 @@ do
             Converted["_Main"].Size = UDim2.new(0, 640, 0, 438)
             Converted["_Main"].ZIndex = 100
             Converted["_Main"].Name = "Main"
-            Converted["_Main"].Parent = Converted["_Atlas"]
+            Converted["_Main"].Parent = Converted["_Freem"]
 
             Converted["_Contents"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             Converted["_Contents"].BackgroundTransparency = 1
@@ -1352,7 +1352,7 @@ do
             Converted["_Ignore4"].Parent = Converted["_Theme4"]
 
             Converted["_Title"].Font = Enum.Font.GothamBlack
-            Converted["_Title"].Text = "Atlas"
+            Converted["_Title"].Text = "Freem"
             Converted["_Title"].TextColor3 = Color3.fromRGB(164.00000542402267, 53.00000064074993, 90.00000223517418)
             Converted["_Title"].TextSize = 16
             Converted["_Title"].TextTruncate = Enum.TextTruncate.AtEnd
@@ -1422,7 +1422,7 @@ do
             Converted["_Frame"].Parent = Converted["_Main1"]
 
             Converted["_B"].Font = Enum.Font.Gotham
-            Converted["_B"].Text = "Atlas UI Lib: RoadToGlory#9879"
+            Converted["_B"].Text = "Freem UI Lib: RoadToGlory#9879"
             Converted["_B"].TextColor3 = Color3.fromRGB(225.00000178813934, 225.00000178813934, 225.00000178813934)
             Converted["_B"].TextSize = 12
             Converted["_B"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -1862,7 +1862,7 @@ do
             Converted["_Notifications"].Size = UDim2.new(0, 260, 1, -20)
             Converted["_Notifications"].ZIndex = 200
             Converted["_Notifications"].Name = "Notifications"
-            Converted["_Notifications"].Parent = Converted["_Atlas"]
+            Converted["_Notifications"].Parent = Converted["_Freem"]
 
             Converted["_UIListLayout4"].Padding = UDim.new(0, 10)
             Converted["_UIListLayout4"].HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -1876,7 +1876,7 @@ do
             Converted["_Hint"].Visible = false
             Converted["_Hint"].ZIndex = 300
             Converted["_Hint"].Name = "Hint"
-            Converted["_Hint"].Parent = Converted["_Atlas"]
+            Converted["_Hint"].Parent = Converted["_Freem"]
 
             Converted["_Arrow1"].Image = "http://www.roblox.com/asset/?id=10955007577"
             Converted["_Arrow1"].ImageColor3 = Color3.fromRGB(21.000000648200512, 21.000000648200512, 21.000000648200512)
@@ -2015,7 +2015,7 @@ do
             Converted["_Ignore21"].Name = "Ignore"
             Converted["_Ignore21"].Parent = Converted["_Theme22"]
 
-            return Converted["_Atlas"]
+            return Converted["_Freem"]
         end
 
         local lib = makeLibrary()
