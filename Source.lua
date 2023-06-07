@@ -437,9 +437,9 @@ do
                 ["_Theme9"] = Instance.new("StringValue");
                 ["_Category9"] = Instance.new("StringValue");
                 ["_Ignore9"] = Instance.new("BoolValue");
-                ["_Mobile"] = Instance.new("ImageButton")
-                ["_MoUIcorn"] = Instance.new("UICorner")
-                ["_MoUIAspect"] = Instance.new("UIAspectRatioConstraint")
+                ["_Mobile"] = Instance.new("ImageButton");
+                ["_MoUIcorn"] = Instance.new("UICorner");
+                ["_MoUIAspect"] = Instance.new("UIAspectRatioConstraint");
             }
 
             --Properties
