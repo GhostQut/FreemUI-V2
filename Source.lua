@@ -437,9 +437,6 @@ do
                 ["_Theme9"] = Instance.new("StringValue");
                 ["_Category9"] = Instance.new("StringValue");
                 ["_Ignore9"] = Instance.new("BoolValue");
-                ["_Mobile"] = Instance.new("ImageButton");
-                ["_MoUIcorn"] = Instance.new("UICorner");
-                ["_MoUIAspect"] = Instance.new("UIAspectRatioConstraint");
             }
 
             --Properties
@@ -453,18 +450,6 @@ do
 
             Converted["_UICorner"].CornerRadius = UDim.new(0, 6)
             Converted["_UICorner"].Parent = Converted["_Loader"]
-
-            Converted["_Mobile"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Converted["_Mobile"].BorderSizePixel = 0
-            Converted["_Mobile"].Position = UDim2.new(0.0279225614, 0, 0.241613418, 0)
-            Converted["_Mobile"].Size = UDim2.new(0, 50, 0, 50)
-            Converted["_Mobile"].ImageColor3 = Color3.fromRGB(0, 0, 0)
-            Converted["_Mobile"].Position = UDim2.new(0.0279225614, 0, 0.241613418, 0)
-            Converted["_Mobile"].Size = UDim2.new(0, 50, 0, 50)
-            Converted["_Mobile"].Image = "rbxassetid://7733777166"
-            
-            Converted["_MoUIcorn"].Parent = Converted["_Mobile"]
-            Converted["_MoUIAspect"].Parent = Converted["_Mobile"]
             
             Converted["_Theme"].Value = "BackgroundColor3"
             Converted["_Theme"].Name = "Theme"
