@@ -41,7 +41,7 @@ Library.Icons = {
     ["Warning"] = 11110093949;
     ["Info"] = 11109991278;
     ["Error"] = 11109992284;
-    ["Icon"] = 7733777166
+    ["Icon"] = 7733777166;
 }
 
 local old_warn = warn
