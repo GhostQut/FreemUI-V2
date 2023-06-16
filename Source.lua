@@ -2581,7 +2581,7 @@ do
         return value
     end
     function Library:CreatePage(name)
-        self._page_num = self._page_num+1
+        self._page_num = self._page_num+1;
         return Page.new(self, {
             ["Color"] = self.Color;
             ["Name"] = name;
