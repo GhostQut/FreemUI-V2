@@ -1005,10 +1005,24 @@ do
             return Converted["_Loader"]
         end
 
+        local function makeMobile()
+            
+            local Converted = {
+                ["_Mobile"] = Instance.new("ImageButton");
+            }
+
+            return Converted["_Mobile"]
+        end
+
+
         if info.CheckKey then
             info.UseLoader = true
         end
 
+        if info.UseLoader then
+            info.UseMobile = true
+        end
+        
         info.Rank = info.Rank or "User"
         info.RankColor = info.RankColor or Color3.new(0,1,0)
 
@@ -2255,6 +2269,13 @@ do
                 task.wait(3.5)
                 doClose()
             end))
+        end
+        -- Mobile
+        if info.UseMobile then
+            local mobile = makeMobile()
+            mobile.Parent = lib
+            mobile.Visible = true
+            mobile.Position = UDim2.new(1, 300, 1, -20)
         end
 
         -- Current page
