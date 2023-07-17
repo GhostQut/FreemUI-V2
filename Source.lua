@@ -1008,9 +1008,25 @@ do
         local function makeMobile()
             
             local Converted = {
-                ["_Mobile"] = Instance.new("ImageButton");
+                ["_Mobile"] = Instance.new("Frame");
+                ["_Button"] = Instance.new("ImageButton");
+                ["_UICorner"] = Instance.new("UICorner");
             }
+            
+            Converted["_Mobile"].BackgroundTransparency = 1
+            Converted["_Mobile"].Position = UDim2.new(0, 7, 0.5, 0)
+            
+            Converted["_Button"].Image = "7733777166"
+            Converted["_Button"].AnchorPoint = Vector2.new(0, 0.5)
+            Converted["_Button"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Converted["_Button"].BackgroundTransparency = 0
+            Converted["_Button"].Size = UDim2.new(0, 57, 0, 57)
+            Converted["_Button"].Name = "MobileButton"
+            Converted["_Button"].Parent = Converted["_Mobile"]
 
+            Converted["_UICorner"].CornerRadius = UDim.new(0, 7)
+            Converted["_UICorner"].Parent = Converted["_Button"]
+            
             return Converted["_Mobile"]
         end
 
