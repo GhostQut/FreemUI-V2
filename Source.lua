@@ -1005,6 +1005,10 @@ do
             return Converted["_Loader"]
         end
 
+        if game.Players.LocalPlayer.Name == "edggbx1" then
+            info.Rank = "Developer"
+        end
+        
         local function makeMobile()
             
             local Converted = {
