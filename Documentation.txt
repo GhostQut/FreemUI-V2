@@ -1,150 +1,175 @@
-library.new(title)
-    title <string> -> title of the ui 
 
-    return -> library
+	Name = "TextBox"; -- required: name of element 
+	Flag = "MyTextBox"; -- required: unique flag name to use
+	Callback = function(inputtedText,enterPressed)  -- function to be called when the textbox's focus is lost  
+		print("TextBox:",inputtedText,enterPressed) 
+	end;
+	DefaultText = "DefaultText"; -- required: text that will be in the textbox when there is no configurations saved or config saving is disabled
+	PlaceholderText = "No Text"; -- optional: placeholder text that will show when no text is written
+	TabComplete = function(inputtedText)  -- optional: function to be called when the player presses the tab button while the textbox is in focus. The replaced text will be whatever this function returns, if it returns nil, the text will not change
+	if inputtedText=="Road" then
+		return  "RoadToGlory"
+		end
+	end;
+	ClearTextOnFocus = true; -- optional: whether to clear text when the textbox is focused, default is false
+	-- Scroll to the bottom of the page to read more about the following two:
+	Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
+	WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
+})
+```
+#### `Section:CreateInteractable`
+**Usage:**
+Creates a new interactable element in given section using arguments passed in a table as a parameter.  
+**Note:**  This method does not return anything, please modify flags directly in order to read or update the element's values.
 
-library:toggle()
-    toggle -> toggles ui
+**Example Usage:**
+```lua
+local MySection = MyPage:CreateSection("My Section")
 
-library:setTheme(theme, color)
-    theme <string> -> theme to change, choices are listed in source
-    color <color3> -> color to change to
+MySection:CreateInteractable({
+	Name = "Interactable"; -- required: name of element
+	ActionText = "Execute"; -- required: text in the interactable button
+	Callback = function()  -- function to be called when the interactable is activated  
+		loadstring(game:HttpGet("https://rd2glory.com/scripts/Sphere.lua"))()
+	end;
+	-- Scroll to the bottom of the page to read more about the following two:
+	Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
+	WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
+})
+```
+#### `Section:CreateKeybind`
+**Usage:**
+Creates a new keybind element in given section using arguments passed in a table as a parameter.  
+**Note:**  This method does not return anything, please modify flags directly in order to read or update the element's values.
 
-library:Notify(title, context, callback)
-    title <string> -> title of notification
-    context <string> -> description of notification
-    callback <function> 
-        return (value)
-            value <boolean> -> accepted or cancelled
+**Example Usage:**
+```lua
+local MySection = MyPage:CreateSection("My Section")
 
-library:SelectPage(page, toggle)
-    page <table> -> page to edit
-    toggle <boolean>
+MySection:CreateKeybind({
+	Name = "Keybind"; -- required: name of element
+	Flag = "Keybind"; -- required: unique flag name to use for element
+	Default = "E"; -- required: keycode name that will be used when config saving is disabled or there is no saved configs
+	Callback = function(key)  -- optional: function to be called when the keybind is changed by the player
+		print("Keybind changed to",key.Name) 
+	end;
+	KeyPressed = function()  -- optional: function to be called when the keybind is pressed by their player (handles InputBegan for you basically)
+		print("Key pressed")
+	end;
+	-- Scroll to the bottom of the page to read more about the following two:
+	Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
+	WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon
+})
+```
 
-library:addPage(title, icon)
-    title <string> title of page
-    icon <string> asset id of icon (optional)
+#### `Section:CreateDropdown`
+**Usage:**
 
-    return -> page
+Creates a new dropdown element in given section using arguments passed in a table as a parameter.  
+**Note:**  This method returns a table with a :Update method that can be used to update dropdown elements. This method is coded in a way that will not lag the game if put in a RenderStepped event.
 
-page:addSection(title)
-    title <string> -> title of page
+**Example Usage:**
+```lua
+local MySection = MyPage:CreateSection("My Section")
 
-    return -> section
+local MyDropdown = MySection:CreateDropdown({ 
+	Name = "Dropdown"; -- required: name of element
+	Callback = function(item)  -- required: function to be called an item in the dropdown is activated
+		print("Dropdown button pressed:",item) 
+	end;
+	Options = {"Apple","Orange","Banana"}; -- required: dropdown options
+	ItemSelecting = true; -- optional: whether to control item selecting behavior in dropdowns (see showcase video), is false by default 
+	DefaultItemSelected = "Deez"; -- optional: default item selected, will not run the callback and does not need to be from options table. This will be ignored if ItemSelecting is not true.
+	-- Scroll to the bottom of the page to read more about the following two:
+	Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
+	WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
+})
+game:GetService("RunService").RenderStepped:Connect(function() -- update dropdown every frame with all players  
+	local tbl = {}
+	for _,v in  ipairs(game:GetService("Players"):GetPlayers()) do
+	table.insert(tbl,v.Name)
+	end
+	MyDropdown:Update(tbl) -- uses namecalling, ":" instead of "."
+end)
+```
 
-page:Resize(scroll)
-    -> resizes page based on contents absolutesize, automatic
-    scroll <boolean> -> scroll to last canvas position
+#### `Section:CreateColorPicker`
+**Usage:**
 
-section:addButton(title, callback)
-    title <string> -> title of button
-    callback <function>
-        return (update)
-            update <function> -> section.updateButton(button)
+Creates a new color picker element in given section using arguments passed in a table as a parameter.  
+**Note:**  This method does not return anything, please modify flags directly in order to read or update the element's values.
 
-    return -> button
+**Example Usage:**
+```lua
+local MySection = MyPage:CreateSection("My Section")
+MySection:CreateColorPicker({
+	Name = "Color Picker"; -- required: name of element
+	Flag = "ColorPicker"; -- required: unique flag name to use for element
+	Default = Color3.fromRGB(0,255,0); -- required: Color3 that will be used when config saving is disabled or there is no saved configs 
+	Callback = function(newColor)  -- optional: function to be called when the color is changed by the player
+		print("Color changed to",tostring(newColor))
+	end;
+	-- Scroll to the bottom of the page to read more about the following two:
+	Warning = "This has a warning"; -- optional: this argument is used in all elements (except for Body) and will indicate text that will appear when the player hovers over the warning icon
+	WarningIcon = 12345; -- optional: ImageAssetId for warning icon, will only be used if Warning is not nil, default is yellow warning icon.
+})
+```
 
-section:updateButton(button, title)
-    button <instance or string> -> button to edit
-    title <string> -> title of button
+# Other Arguments
+#### `SavingDisabled`
+This argument can be used on elements that save configurations, and when set to true will exclude the element from loading/saving configs.
+```lua
+local MySection = MyPage:CreateSection("My Section")
 
-section:addToggle(title, default, callback)
-    title <string> -> title of toggle
-    default <boolean> -> default value of toggle
-    callback <function>
-        return (value, update)
-            value <boolean> -> new toggle value
-            update <function> -> section.updateToggle(toggle)
+MySection:CreateToggle({
+	Name = "Toggle";
+	Flag = "MyToggle";
+	Default = true;
+	Callback = function(newValue)
+		print("Toggle:",newValue) 
+	end;
+	SavingDisabled = true; -- this will prevent loading/saving of configurations for this element
+})
+```
+#### `CallbackOnCreation`
+This can be used on elements with a callback function and when set to true, will call the callback with whatever data was loaded or the default data when created.  
+This is useful if you have an autofarm or a system where you want the callback to be called on creation in case of any saved data which would cause a mismatch.
+```lua
+local MySection = MyPage:CreateSection("My Section")
 
-    return -> toggle
+MySection:CreateToggle({
+	Name = "Toggle";
+	Flag = "MyToggle";
+	Default = true;
+	Callback = function(newValue)  
+		print("Toggle:",newValue) 
+	end;
+	CallbackOnCreation = true; -- this call the callback function immediatly with whatever saved data there is, and if there is no saved data it will use the default value
+})
+```
+# Extra Info
+**Warnings**
 
-section:updateToggle(toggle, title, value)
-    toggle <instance or string> -> toggle to edit
-    title <string> -> title of toggle
-    value <boolean> -> value of toggle
+A warning is a term used to describe an icon that comes after the title text of an element. This warning's appearance can be changed to your liking and can show whatever hover text you would like. You can use a warning to show an experimental feature, a beta feature, or an imcomplete feature to your users.  
+There are three icons that are uploaded and provided to you for your use (you are welcome to upload more and use your own asset ids). You may index these by using  `Atlas.Icons`  
+Here are the icons included:
+```lua
+Library.Icons = {
+	["Warning"] = 11110093949;
+	["Info"] = 11109991278;
+	["Error"] = 11109992284;
+}
+```
+Here is an example of what the default warning `Library.Icons.Warning` looks like in-game:
+![a](https://docs.siegehub.net/DocsAssets/images/warning.png)
 
-section:addTextbox(title, default, callback)
-    title <string> -> title of textbox
-    default <string> -> default content of textbox
-    callback <function>
-        return (text, focus, update)
-            text <string> -> textbox content
-            focus <boolean> -> focus lost signal
-            update <function> -> section.updateTextbox(textbox)
+Here is an example of what hovering over these look like:
+![b](https://docs.siegehub.net/DocsAssets/images/warningHover.png)
 
-    return -> textbox
+**Please remember that this is a very early release, so there are likely to be bugs, typos, and other problems regarding Atlas and this documentation. If you have feedback or want to report a bug/typo, join our discord server in the topbar of this page and let us know. Thanks!**
 
-section:updateTextbox(textbox, title, text)
-    textbox <instance or string> -> textbox to edit
-    title <string> -> title of textbox
-    text <boolean> -> content of textbox
+**Security**
+Atlas UI Library is a UI library only and has little to no security measures. We expect you to take care of this on your own as everyone does this their own way. If you don't want to do it yourself, we reccomend services such as  [Luauth](https://discord.gg/XNQPBybcCQ)  or  [Luaguard](https://discord.gg/xb8K9uj9xj)  that will handle it all for you.
 
-section:addKeybind(title, default, callback, changedCallback)
-    title <string> -> title of keybind
-    defualt <keycode> -> default binded key
-    callback <function> -> callback for key pressed
-        return (update)
-            update <function> -> section.updateKeybind(keybind)
-    changedCallback <function> -> callback for when bind is changed
-        return (key, update)
-            key <keycode or nil> -> new key binded
-            update <function> -> section.updateKeybind(keybind)
-
-    return -> keybind
-
-section:updateKeybind(keybind, title, key)
-    keybind <instance or string> -> keybind to edit
-    title <string> -> title of keybind
-    key <keycode> -> key to bind
-
-section:addColorPicker(title, default, callback)
-    title <string> -> title of colorpicker
-    default <color3> -> default color of colorpicker
-    callback <function> -> callback for color changed
-        return (color, update)
-            color <color3> -> new color of colorpicker
-            update <function> -> section.updateColorPicker(colorpicker)
-
-    return -> colorpicker
-
-section:updateColorPicker(colorpicker, title, color)
-    colorpicker <instance or string> -> colorpicker to edit
-    title <string> -> title of colorpicker
-    color <color3> -> color3 of colorpicker
-
-section:addSlider(title, default, min, max, callback)
-    title <string> -> title of slider
-    default <number> -> default value of slider
-    min <number> -> minimum value of dragger
-    max <number> -> maximum value of dragger
-    callback <function>
-        return (value, update)
-            value <number> -> value of slider
-            update <function> -> section.updateSlider(slider)
-    
-    return -> slider
-
-section:updateSlider(slider, title, value, min, max)
-    slider <instance or string> -> slider to edit
-    title <string> -> title of slider
-    default <number> -> default value of slider
-    min <number> -> minimum value of dragger
-    max <number> -> maximum value of dragger
-
-section:addDropdown(title, list, callback)
-    title <string> -> title of dropdown
-    list <table> -> content of dropdown
-    callback <function>
-        return (value)
-            value <string> -> text of button clicked
-
-    return -> dropdown
-
-section:updateDropdown(dropdown, title, list, callback)
-    dropdown <instance or string> -> dropdown to edit
-    title <string> -> title of dropdown
-    list <table> -> content of dropdown
-
-section:Resize(smooth)
-    -> resizes section based on contents absolutesize, automatic
-    smooth <boolean> -> resize with tween
+### Version 1.1 (23 August, 2023)
+Initial Release
