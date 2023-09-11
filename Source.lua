@@ -2295,7 +2295,15 @@ do
             local mobile = makeMobile()
             mobile.Parent = lib
             mobile.Visible = true
-            mobile.Position = UDim2.new(1, 300, 1, -20)
+            mobile.Position = UDim2.new(0.870967746, 0, 0.332653075, 0)
+    	    mobile.Visible = true
+                mobile._Button.MouseButton1Click:Connect(function()
+        		if Main.Visible == false then
+        			Main.Visible = true
+        		else
+        			Main.Visible = false
+        		end
+        	end)
         end
 
         -- Current page
