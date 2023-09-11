@@ -1019,7 +1019,7 @@ do
             
             Converted["_Mobile"].BackgroundTransparency = 1
             Converted["_Mobile"].Position = UDim2.new(0, 7, 0.5, 0)
-            Converted["_Mobile"].Name = ""
+            Converted["_Mobile"].Name = "MobileFr"
             
             Converted["_Button"].Image = "7733777166"
             Converted["_Button"].AnchorPoint = Vector2.new(0, 0.5)
