@@ -2884,7 +2884,7 @@ do
         local no = utility:CreateButtonObject(notif.Frame.No)
 
 
-        yes.MouseButton1Click:Connect(function()
+        yes.Activated:Connect(function()
         	tweenOut()
             info.Callback(true)
         end)
