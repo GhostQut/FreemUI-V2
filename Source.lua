@@ -1019,10 +1019,11 @@ do
             
             Converted["_Mobile"].BackgroundTransparency = 1
             Converted["_Mobile"].Position = UDim2.new(0, 7, 0.5, 0)
+            Converted["_Mobile"].Name = ""
             
             Converted["_Button"].Image = "7733777166"
             Converted["_Button"].AnchorPoint = Vector2.new(0, 0.5)
-            Converted["_Button"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Converted["_Button"].BackgroundColor3 = Color3.fromRGB(24, 24, 24)
             Converted["_Button"].BackgroundTransparency = 0
             Converted["_Button"].Size = UDim2.new(0, 57, 0, 57)
             Converted["_Button"].Name = "MobileButton"
@@ -2298,10 +2299,10 @@ do
             mobile.Position = UDim2.new(0.870967746, 0, 0.332653075, 0)
     	    mobile.Visible = true
                 mobile._Button.MouseButton1Click:Connect(function()
-        		if Main.Visible == false then
-        			Main.Visible = true
+        		if lib.Main.Visible == false then
+        			lib.Main.Visible = true
         		else
-        			Main.Visible = false
+        			lib.Main.Visible = false
         		end
         	end)
         end
