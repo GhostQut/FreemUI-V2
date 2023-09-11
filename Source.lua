@@ -2298,7 +2298,7 @@ do
             mobile.Visible = true
             mobile.Position = UDim2.new(0.870967746, 0, 0.332653075, 0)
     	    mobile.Visible = true
-                mobile._Button.MouseButton1Click:Connect(function()
+                mobile.MobileButton.MouseButton1Click:Connect(function()
         		if lib.Main.Visible == false then
         			lib.Main.Visible = true
         		else
