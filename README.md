@@ -17,7 +17,7 @@ local Freem = loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostQu
 local UI = Freem.new({
     Name = "FreemUI"; -- script name (required)
     ConfigFolder = "Freem"; -- folder name to save configs to, set this to nil if you want to disable configs saving
-    Credit = "Made By Me"; -- text to appear if player presses the "i" button on their UI (optional)
+    Credit = "Made By GhostQut"; -- text to appear if player presses the "i" button on their UI (optional)
     Color = Color3.fromRGB(255,0,0); -- theme color for UI (required)
     Bind = "LeftShift"; -- keybind for toggling the UI, must be a valid KeyCode name
     -- Freem Loader:
@@ -37,13 +37,13 @@ Creates a page in your UI with parameter **`Name`** being the name of the page.
 **Example Usage**:
 ```lua
 local UI = Freem.new({
-    Name = "My Script";
-    ConfigFolder = "MyScript";
-    Credit = "Made By RoadToGlory#9879";
+    Name = "FreemUI ";
+    ConfigFolder = "Freem";
+    Credit = "Made By GhostQut";
     Color = Color3.fromRGB(255,0,0);
     Bind = "LeftControl";
     UseLoader = true;
-    FullName = "My Script Hub";
+    FullName = "FreemUI  Hub";
     CheckKey = function(inputtedKey)
         return inputtedKey=="key1234"
     end;
@@ -59,13 +59,13 @@ Shows a library notification on the bottom left corner of the player's screen wi
 **Example Usage**:
 ```lua
 local UI = Freem.new({
-    Name = "My Script";
-    ConfigFolder = "MyScript";
-    Credit = "Made By RoadToGlory#9879";
+    Name = "FreemUI ";
+    ConfigFolder = "Freem";
+    Credit = "Made By GhostQut";
     Color = Color3.fromRGB(255,0,0);
     Bind = "LeftControl";
     UseLoader = true;
-    FullName = "My Script Hub";
+    FullName = "FreemUI  Hub";
     CheckKey = function(inputtedKey)
         return inputtedKey=="key1234"
     end;
@@ -87,13 +87,13 @@ If no argument is provided, it will toggle the UI's visibility to the opposite o
 **Example Usage**:
 ```lua
 local UI = Freem.new({
-    Name = "My Script";
-    ConfigFolder = "MyScript";
-    Credit = "Made By RoadToGlory#9879";
+    Name = "FreemUI ";
+    ConfigFolder = "Freem";
+    Credit = "Made By GhostQut";
     Color = Color3.fromRGB(255,0,0);
     Bind = "LeftControl";
     UseLoader = true;
-    FullName = "My Script Hub";
+    FullName = "FreemUI  Hub";
     CheckKey = function(inputtedKey)
         return inputtedKey=="key1234"
     end;
@@ -114,13 +114,13 @@ Sets UI's toggle bind, use "Unknown" to disable.
 **Example Usage**:
 ```lua
 local UI = Freem.new({
-    Name = "My Script";
-    ConfigFolder = "MyScript";
-    Credit = "Made By RoadToGlory#9879";
+    Name = "FreemUI ";
+    ConfigFolder = "Freem";
+    Credit = "Made By GhostQut";
     Color = Color3.fromRGB(255,0,0);
     Bind = "LeftControl";
     UseLoader = true;
-    FullName = "My Script Hub";
+    FullName = "FreemUI  Hub";
     CheckKey = function(inputtedKey)
         return inputtedKey=="key1234"
     end;
@@ -137,13 +137,13 @@ Destroys the UI, destroys any connections, and stops any coroutines. This method
 **Example Usage**:
 ```lua
 local UI = Freem.new({
-    Name = "My Script";
-    ConfigFolder = "MyScript";
-    Credit = "Made By RoadToGlory#9879";
+    Name = "FreemUI ";
+    ConfigFolder = "Freem";
+    Credit = "Made By GhostQut";
     Color = Color3.fromRGB(255,0,0);
     Bind = "LeftControl";
     UseLoader = true;
-    FullName = "My Script Hub";
+    FullName = "FreemUI  Hub";
     CheckKey = function(inputtedKey)
         return inputtedKey=="key1234"
     end;
@@ -290,8 +290,8 @@ MySection:CreateTextBox({
 	DefaultText = "DefaultText"; -- required: text that will be in the textbox when there is no configurations saved or config saving is disabled
 	PlaceholderText = "No Text"; -- optional: placeholder text that will show when no text is written
 	TabComplete = function(inputtedText)  -- optional: function to be called when the player presses the tab button while the textbox is in focus. The replaced text will be whatever this function returns, if it returns nil, the text will not change
-	if inputtedText=="Road" then
-		return  "RoadToGlory"
+	if inputtedText=="Ghost" then
+		return  "GhostQut"
 		end
 	end;
 	ClearTextOnFocus = true; -- optional: whether to clear text when the textbox is focused, default is false
@@ -454,5 +454,5 @@ Here is an example of what hovering over these look like:
 **Security**
 Freem UI Library is a UI library only and has little to no security measures. We expect you to take care of this on your own as everyone does this their own way. If you don't want to do it yourself, we reccomend services such as  [Luauth](https://discord.gg/XNQPBybcCQ)  or  [Luaguard](https://discord.gg/xb8K9uj9xj)  that will handle it all for you.
 
-### Version 1.1  (8 August, 2023)
+### Version 1.2  (12 September, 2023)
 Initial Release
