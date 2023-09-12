@@ -209,7 +209,7 @@ do
         utility:Warn('Color not found!')
         return color
     end
-
+    
     function utility:CreateButtonObject(obj)
         
         local Converted = {
