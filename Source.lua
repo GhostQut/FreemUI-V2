@@ -2883,14 +2883,17 @@ do
         local yes = utility:CreateButtonObject(notif.Frame.Yes)
         local no = utility:CreateButtonObject(notif.Frame.No)
 
-        function setTargetObj()
+        local function onInputBegan(input, gameProcessed)
+        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        		if not gameProcessed then
+        			if mouse.Target then
+        				local targetObject = mouse.Target
+        			end
+        		end
+        	end
+        end)
         
-        local targetObject = mouse.Target
-        	-- do stuff
-        	wait(.1)
-        end
-        
-        UIS.TouchTap:Connect(function()
+        UIS.InputBegan:Connect(onInputBegan)
         	if targetObject == yes then
                 tweenOut()
                 info.Callback(true)
@@ -2899,6 +2902,9 @@ do
                 tweenOut()
                 info.Callback(false)
             end
+        end)
+        UIS.InputBegan:Connect(onInputBegan)
+            print(targetObject)
         end)
 
         yes.MouseButton1Down:Connect(function()
