@@ -2894,16 +2894,6 @@ do
         end)
         
         UIS.InputBegan:Connect(onInputBegan)
-        	if targetObject == yes then
-                tweenOut()
-                info.Callback(true)
-            end
-            if targetObject == no then
-                tweenOut()
-                info.Callback(false)
-            end
-        end)
-        UIS.InputBegan:Connect(onInputBegan)
             print(targetObject)
         end)
 
