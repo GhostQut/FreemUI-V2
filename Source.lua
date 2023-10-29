@@ -358,12 +358,12 @@ do
                 ["_Main"] = Instance.new("Frame");
                 ["_No"] = Instance.new("Frame");
                 ["_UICorner2"] = Instance.new("UICorner");
-                ["_UIStroke"] = Instance.new("UIStroke");
+                ["_troke"] = Instance.new("troke");
                 ["_UIGradient1"] = Instance.new("UIGradient");
                 ["_TextLabel"] = Instance.new("TextLabel");
                 ["_Yes"] = Instance.new("Frame");
                 ["_UICorner3"] = Instance.new("UICorner");
-                ["_UIStroke1"] = Instance.new("UIStroke");
+                ["_troke1"] = Instance.new("troke");
                 ["_TextLabel1"] = Instance.new("TextLabel");
                 ["_UIGradient2"] = Instance.new("UIGradient");
                 ["_GameName"] = Instance.new("TextLabel");
@@ -387,7 +387,7 @@ do
                 ["_Key"] = Instance.new("Frame");
                 ["_Input"] = Instance.new("Frame");
                 ["_UICorner4"] = Instance.new("UICorner");
-                ["_UIStroke2"] = Instance.new("UIStroke");
+                ["_troke2"] = Instance.new("troke");
                 ["_TextBox"] = Instance.new("TextBox");
                 ["_ImageLabel2"] = Instance.new("ImageLabel");
                 ["_Message1"] = Instance.new("TextLabel");
@@ -405,10 +405,10 @@ do
                 ["_Interact"] = Instance.new("Frame");
                 ["_Button"] = Instance.new("Frame");
                 ["_UICorner5"] = Instance.new("UICorner");
-                ["_UIStroke3"] = Instance.new("UIStroke");
+                ["_troke3"] = Instance.new("troke");
                 ["_UIGradient3"] = Instance.new("UIGradient");
                 ["_TextLabel2"] = Instance.new("TextLabel");
-                ["_UISizeConstraint"] = Instance.new("UISizeConstraint");
+                ["_izeConstraint"] = Instance.new("izeConstraint");
                 ["_UIListLayout"] = Instance.new("UIListLayout");
                 ["_0_padding"] = Instance.new("Frame");
                 ["_padding"] = Instance.new("Frame");
@@ -422,7 +422,7 @@ do
                 ["_Gradient"] = Instance.new("Frame");
                 ["_UICorner6"] = Instance.new("UICorner");
                 ["_UIGradient4"] = Instance.new("UIGradient");
-                ["_UIStroke4"] = Instance.new("UIStroke");
+                ["_troke4"] = Instance.new("troke");
                 ["_UICorner7"] = Instance.new("UICorner");
                 ["_Thumbnail"] = Instance.new("ImageLabel");
                 ["_UICorner8"] = Instance.new("UICorner");
@@ -496,8 +496,8 @@ do
             Converted["_UICorner2"].CornerRadius = UDim.new(0, 5)
             Converted["_UICorner2"].Parent = Converted["_No"]
 
-            Converted["_UIStroke"].Color = Color3.fromRGB(255, 43.00000123679638, 43.00000123679638)
-            Converted["_UIStroke"].Parent = Converted["_No"]
+            Converted["_troke"].Color = Color3.fromRGB(255, 43.00000123679638, 43.00000123679638)
+            Converted["_troke"].Parent = Converted["_No"]
 
             Converted["_UIGradient1"].Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 73.00000324845314, 73.00000324845314)),
@@ -527,8 +527,8 @@ do
             Converted["_UICorner3"].CornerRadius = UDim.new(0, 5)
             Converted["_UICorner3"].Parent = Converted["_Yes"]
 
-            Converted["_UIStroke1"].Color = Color3.fromRGB(12.000000234693289, 129.00000751018524, 255)
-            Converted["_UIStroke1"].Parent = Converted["_Yes"]
+            Converted["_troke1"].Color = Color3.fromRGB(12.000000234693289, 129.00000751018524, 255)
+            Converted["_troke1"].Parent = Converted["_Yes"]
 
             Converted["_TextLabel1"].Font = Enum.Font.GothamMedium
             Converted["_TextLabel1"].Text = "Load"
@@ -684,8 +684,8 @@ do
             Converted["_UICorner4"].CornerRadius = UDim.new(0, 5)
             Converted["_UICorner4"].Parent = Converted["_Input"]
 
-            Converted["_UIStroke2"].Color = Color3.fromRGB(49.000004678964615, 49.000004678964615, 49.000004678964615)
-            Converted["_UIStroke2"].Parent = Converted["_Input"]
+            Converted["_troke2"].Color = Color3.fromRGB(49.000004678964615, 49.000004678964615, 49.000004678964615)
+            Converted["_troke2"].Parent = Converted["_Input"]
 
             Converted["_TextBox"].Font = Enum.Font.Gotham
             Converted["_TextBox"].Text = ""
@@ -805,8 +805,8 @@ do
             Converted["_UICorner5"].CornerRadius = UDim.new(0, 5)
             Converted["_UICorner5"].Parent = Converted["_Button"]
 
-            Converted["_UIStroke3"].Color = Color3.fromRGB(12.000000234693289, 129.00000751018524, 255)
-            Converted["_UIStroke3"].Parent = Converted["_Button"]
+            Converted["_troke3"].Color = Color3.fromRGB(12.000000234693289, 129.00000751018524, 255)
+            Converted["_troke3"].Parent = Converted["_Button"]
 
             Converted["_UIGradient3"].Color = ColorSequence.new{
                 ColorSequenceKeypoint.new(0, Color3.fromRGB(12.000000234693289, 129.00000751018524, 255)),
@@ -827,8 +827,8 @@ do
             Converted["_TextLabel2"].Size = UDim2.new(0, 1, 0.5, 0)
             Converted["_TextLabel2"].Parent = Converted["_Button"]
 
-            Converted["_UISizeConstraint"].MaxSize = Vector2.new(147, math.huge)
-            Converted["_UISizeConstraint"].Parent = Converted["_TextLabel2"]
+            Converted["_izeConstraint"].MaxSize = Vector2.new(147, math.huge)
+            Converted["_izeConstraint"].Parent = Converted["_TextLabel2"]
 
             Converted["_UIListLayout"].Padding = UDim.new(0, 4)
             Converted["_UIListLayout"].FillDirection = Enum.FillDirection.Horizontal
@@ -911,8 +911,8 @@ do
             }
             Converted["_UIGradient4"].Parent = Converted["_Gradient"]
 
-            Converted["_UIStroke4"].Color = Color3.fromRGB(48.00000473856926, 48.00000473856926, 48.00000473856926)
-            Converted["_UIStroke4"].Parent = Converted["_Gradient"]
+            Converted["_troke4"].Color = Color3.fromRGB(48.00000473856926, 48.00000473856926, 48.00000473856926)
+            Converted["_troke4"].Parent = Converted["_Gradient"]
 
             Converted["_UICorner7"].CornerRadius = UDim.new(0, 7)
             Converted["_UICorner7"].Parent = Converted["_Player"]
@@ -1091,7 +1091,7 @@ do
                 ["_Category4"] = Instance.new("StringValue");
                 ["_Ignore4"] = Instance.new("BoolValue");
                 ["_Title"] = Instance.new("TextLabel");
-                ["_UISizeConstraint"] = Instance.new("UISizeConstraint");
+                ["_izeConstraint"] = Instance.new("izeConstraint");
                 ["_Theme5"] = Instance.new("StringValue");
                 ["_Category5"] = Instance.new("StringValue");
                 ["_Ignore5"] = Instance.new("BoolValue");
@@ -1200,7 +1200,7 @@ do
                 ["_2_padding"] = Instance.new("Frame");
                 ["_padding3"] = Instance.new("Frame");
                 ["_0_padding4"] = Instance.new("Frame");
-                ["_UIStroke"] = Instance.new("UIStroke");
+                ["_troke"] = Instance.new("troke");
                 ["_Theme21"] = Instance.new("StringValue");
                 ["_Category20"] = Instance.new("StringValue");
                 ["_Ignore20"] = Instance.new("BoolValue");
@@ -1399,7 +1399,7 @@ do
             Converted["_Title"].Name = "Title"
             Converted["_Title"].Parent = Converted["_Top1"]
 
-            Converted["_UISizeConstraint"].Parent = Converted["_Title"]
+            Converted["_izeConstraint"].Parent = Converted["_Title"]
 
             Converted["_Theme5"].Value = "TextColor3"
             Converted["_Theme5"].Name = "Theme"
@@ -2025,12 +2025,12 @@ do
             Converted["_0_padding4"].Name = "0_padding"
             Converted["_0_padding4"].Parent = Converted["_Main3"]
 
-            Converted["_UIStroke"].Color = Color3.fromRGB(165.00000536441803, 165.00000536441803, 165.00000536441803)
-            Converted["_UIStroke"].Parent = Converted["_Main3"]
+            Converted["_troke"].Color = Color3.fromRGB(165.00000536441803, 165.00000536441803, 165.00000536441803)
+            Converted["_troke"].Parent = Converted["_Main3"]
 
             Converted["_Theme21"].Value = "Color"
             Converted["_Theme21"].Name = "Theme"
-            Converted["_Theme21"].Parent = Converted["_UIStroke"]
+            Converted["_Theme21"].Parent = Converted["_troke"]
 
             Converted["_Category20"].Value = "GreyContrast"
             Converted["_Category20"].Name = "Category"
@@ -2472,7 +2472,7 @@ do
 
             LPH_JIT_MAX(function()
                 table.insert(_connections,Run.RenderStepped:Connect(function()
-                    if not UIS:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
+                    if not :IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
                         isResizing = false
                     end
                     if isResizing then
@@ -2606,7 +2606,7 @@ do
             ["_closePages"] = closePages;
         }, Library)
 
-        table.insert(self._connections,UIS.InputBegan:Connect(function(input,gpe)
+        table.insert(self._connections,.InputBegan:Connect(function(input,gpe)
             if input.UserInputType==Enum.UserInputType.Keyboard and input.KeyCode.Name==self.toggleBind and not gpe then
                 self:Toggle()
             end
@@ -2882,27 +2882,14 @@ do
 
         local yes = utility:CreateButtonObject(notif.Frame.Yes)
         local no = utility:CreateButtonObject(notif.Frame.No)
-
-        local function onInputBegan(input, gameProcessed)
-        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        		if not gameProcessed then
-        			if mouse.Target then
-        				local targetObject = mouse.Target
-        			end
-        		end
-        	end
-        end)
         
-        UIS.InputBegan:Connect(onInputBegan)
-            print(targetObject)
-        end)
 
-        yes.MouseButton1Down:Connect(function()
+        yes.TouchTap:Connect(function()
         	tweenOut()
             info.Callback(true)
         end)
 
-        no.MouseButton1Down:Connect(function()
+        no.TouchTap:Connect(function()
             tweenOut()
             info.Callback(false)
         end)
