@@ -2883,6 +2883,23 @@ do
         local yes = utility:CreateButtonObject(notif.Frame.Yes)
         local no = utility:CreateButtonObject(notif.Frame.No)
 
+        function setTargetObj()
+        
+        local targetObject = mouse.Target
+        	-- do stuff
+        	wait(.1)
+        end
+        
+        UIS.TouchTap:Connect(function()
+        	if targetObject == yes then
+                tweenOut()
+                info.Callback(true)
+            end
+            if targetObject == no then
+                tweenOut()
+                info.Callback(false)
+            end
+        end)
 
         yes.MouseButton1Down:Connect(function()
         	tweenOut()
