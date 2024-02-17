@@ -1765,17 +1765,6 @@ function UILIB.newTab(name, img)
 	return self
 end
 
-local functionCheck = false
-for i, v in pairs(game.CoreGui:GetChildren()) do
-	if v.Name == DrRay then
-		game.CoreGui.DrRay:Destroy()
-		functionCheck = true
-	else
-		functionCheck = false
-		return
-	end
-end)
-
 
 
 
