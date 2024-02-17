@@ -1778,5 +1778,14 @@ return UILIB
 
 end;
 };
+while wait(1) do
+	for i, v in pairs(game.CoreGui:GetChildren()) do
+	    if v == DrRay then
+		 game.CoreGui.DrRay:Destroy()
+		else
+			return
+		end
+	end)
+end)
 
 return require(DRR["93"]);
