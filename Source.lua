@@ -1,4 +1,3 @@
--- Instances: 147 | Scripts: 0 | Modules: 1
 local DRR = {};
 
 -- DrRay
@@ -1291,7 +1290,7 @@ parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Player
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
 
 local functionCheck = false
-function Check()
+local function Check()
 	for i, v in pairs(game.CoreGui:GetChildren()) do
 	    if v == DrRay then
 		 game.CoreGui.DrRay:Destroy()
