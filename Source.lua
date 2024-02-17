@@ -1781,7 +1781,6 @@ end;
 for i, v in pairs(game.CoreGui:GetChildren()) do
 	if v.Name == DrRay then
 		game.CoreGui.DrRay:Destroy()
-	end
 	else
 		return
 	end
