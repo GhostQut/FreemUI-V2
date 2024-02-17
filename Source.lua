@@ -1290,6 +1290,7 @@ local closed = false
 parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Players").LocalPlayer.DisplayName
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
 
+
 function UILIB:Load(name, img, direction)
 	local self = setmetatable({}, UILIB)
 	task.spawn(function()
@@ -1300,12 +1301,12 @@ function UILIB:Load(name, img, direction)
 			task.wait(0.3)
 			tw2:Play()
 	end)
-		task.spawn(function()
-		while true do
+        task.spawn(function()
+	     while true do
 		task.wait(0.1)
 		parent.TopBar.ProfileMenu.Clock.TextLabel.Text = os.date("%H:%m")
-		end
-		end)
+	     end
+        end)
 	parent.TopBar.ProfileMenu.Title.TextLabel.Text = name
 	if img then
 		parent.MainBar.Logo.Image = img
@@ -1378,12 +1379,12 @@ function UILIB:Load(name, img, direction)
 	function self:HideCloseButton()
 		DRR["1f"].Visible = false
 	end
-		function self:Hide()
+        function self:Hide()
 		DDR["1"].Enabled = false
 	end
 	function self:Show()
 		DDR["1"].Enabled = true
-		end
+        end
 	function self:Toggle()
 		if closed == false then
 			closed = true
@@ -1428,6 +1429,7 @@ function UILIB:Load(name, img, direction)
 			end
 		end
 	end
+
 end
 
 
@@ -1768,10 +1770,13 @@ end
 
 
 
+
+
+
+
 return UILIB
 
 end;
 };
-
 
 return require(DRR["93"]);
