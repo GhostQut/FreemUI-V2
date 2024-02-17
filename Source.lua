@@ -1296,6 +1296,7 @@ function Check()
 	    if v.Name == DrRay then
 		 game.CoreGui.DrRay:Destroy()
 		 functionCheck = true
+		end
 		else
 			functionCheck = false
 			return
