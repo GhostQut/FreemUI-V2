@@ -1442,8 +1442,9 @@ function UILIB:Load(name, img, direction)
 				end
 			end
 		end
+	else
+		return
 	end
-
 end
 
 
