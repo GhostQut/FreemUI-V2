@@ -1298,6 +1298,7 @@ local function Check()
 	     end
 		else
 			functionCheck = false
+			return
 		end
 	end)
 end
@@ -1359,6 +1360,7 @@ function UILIB:Load(name, img, direction)
 				tw3:Play()
 			end
 		end
+	end
 	end)
 
 
