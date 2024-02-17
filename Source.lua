@@ -1289,21 +1289,8 @@ local closed = false
 parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Players").LocalPlayer.DisplayName
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
 
-local functionCheck = false
-function Check()
-	for i, v in pairs(game.CoreGui:GetChildren()) do
-	    if v == DrRay then
-		 game.CoreGui.DrRay:Destroy()
-		 functionCheck = true
-		else
-			functionCheck = false
-			return
-		end
-	end)
-end
 
 function UILIB:Load(name, img, direction)
-	if functionCheck == true then
 		local self = setmetatable({}, UILIB)
 		task.spawn(function()
 				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
@@ -1359,7 +1346,6 @@ function UILIB:Load(name, img, direction)
 				tw3:Play()
 			end
 		end
-	end
 	end)
 
 
