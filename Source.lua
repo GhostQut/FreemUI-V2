@@ -1295,7 +1295,6 @@ function Check()
 	    if v == DrRay then
 		 game.CoreGui.DrRay:Destroy()
 		 functionCheck = true
-	     end
 		else
 			functionCheck = false
 			return
