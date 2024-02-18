@@ -1292,7 +1292,7 @@ parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Play
 
 local functionCheck = false
 local ff = false
-function Check()
+function UILIB:Check()
 	if ff == true then
 		for i, v in pairs(game.CoreGui:GetChildren()) do
 			if v.Name == "DrRay" then
