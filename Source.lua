@@ -1290,18 +1290,10 @@ local closed = false
 parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Players").LocalPlayer.DisplayName
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
 
-local functionCheck = false
+local functionCheck = true
 	
 
 function UILIB:Load(name, img, direction)
-		for i, v in pairs(game.CoreGui:GetChildren()) do
-			if v.Name == "DrRay" then
-				v:Destroy()
-				functionCheck = true
-			else
-				functionCheck = false
-			end
-		end)
 	if functionCheck == true then
 		local self = setmetatable({}, UILIB)
 		task.spawn(function()
