@@ -1289,70 +1289,51 @@ local closed = false
 
 parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Players").LocalPlayer.DisplayName
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
-
-local functionCheck = true
 	
 
 function UILIB:Load(name, img, direction)
-	if functionCheck == true then
-		local self = setmetatable({}, UILIB)
+	local self = setmetatable({}, UILIB)
+	task.spawn(function()
+			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
+			local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.7, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.23, 0,0.012, 0) })
+			tw:Play()
+			tw.Completed:Wait()
+			task.wait(0.3)
+			tw2:Play()
+	end)
 		task.spawn(function()
-				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
-				local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.7, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.23, 0,0.012, 0) })
-				tw:Play()
-				tw.Completed:Wait()
-				task.wait(0.3)
-				tw2:Play()
-		end)
-			task.spawn(function()
-			while true do
-			task.wait(0.1)
-			parent.TopBar.ProfileMenu.Clock.TextLabel.Text = os.date("%H:%m")
-			end
-			end)
-		parent.TopBar.ProfileMenu.Title.TextLabel.Text = name
-		if img then
-			parent.MainBar.Logo.Image = img
-		elseif img == "Default" then
-
-		else
-			parent.MainBar.Logo.Image = ""
+		while true do
+		task.wait(0.1)
+		parent.TopBar.ProfileMenu.Clock.TextLabel.Text = os.date("%H:%m")
 		end
-
-
-		parent.TopBar.TopBarClose.MouseButton1Click:Connect(function()
-			if closed == false then
-				closed = true
-				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.612, 0) })
-				local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.95, 0) })
-				local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.173, 0) })
-				local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 180 })
-
-				tw:Play()
-				tw.Completed:Wait()
-				tw2:Play()
-				task.wait(0.1)
-				twRotate:Play()
-				tw3:Play()
-				
-			elseif closed == true then
-				closed = false
-				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
-				local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.52, 0) })
-				local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.012, 0) })
-				local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 0 })
-
-				tw:Play()
-				tw.Completed:Wait()
-				tw2:Play()
-				task.wait(0.1)
-				twRotate:Play()
-				tw3:Play()
-			end
 		end)
+	parent.TopBar.ProfileMenu.Title.TextLabel.Text = name
+	if img then
+		parent.MainBar.Logo.Image = img
+	elseif img == "Default" then
+
+	else
+		parent.MainBar.Logo.Image = ""
+	end
 
 
-		function self:Open()
+	parent.TopBar.TopBarClose.MouseButton1Click:Connect(function()
+		if closed == false then
+			closed = true
+			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.612, 0) })
+			local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.95, 0) })
+			local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.173, 0) })
+			local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 180 })
+
+			tw:Play()
+			tw.Completed:Wait()
+			tw2:Play()
+			task.wait(0.1)
+			twRotate:Play()
+			tw3:Play()
+			
+		elseif closed == true then
+			closed = false
 			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
 			local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.52, 0) })
 			local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.012, 0) })
@@ -1365,8 +1346,48 @@ function UILIB:Load(name, img, direction)
 			twRotate:Play()
 			tw3:Play()
 		end
+	end)
 
-		function self:Close()
+
+	function self:Open()
+		local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
+		local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.52, 0) })
+		local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.012, 0) })
+		local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 0 })
+
+		tw:Play()
+		tw.Completed:Wait()
+		tw2:Play()
+		task.wait(0.1)
+		twRotate:Play()
+		tw3:Play()
+	end
+
+	function self:Close()
+		local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.612, 0) })
+		local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.95, 0) })
+		local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.173, 0) })
+		local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 180 })
+
+		tw:Play()
+		tw.Completed:Wait()
+		tw2:Play()
+		task.wait(0.1)
+		twRotate:Play()
+		tw3:Play()
+	end
+	function self:HideCloseButton()
+		DRR["1f"].Visible = false
+	end
+		function self:Hide()
+		DDR["1"].Enabled = false
+	end
+	function self:Show()
+		DDR["1"].Enabled = true
+		end
+	function self:Toggle()
+		if closed == false then
+			closed = true
 			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.612, 0) })
 			local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.95, 0) })
 			local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.173, 0) })
@@ -1375,61 +1396,36 @@ function UILIB:Load(name, img, direction)
 			tw:Play()
 			tw.Completed:Wait()
 			tw2:Play()
-			task.wait(0.1)
+			tw2.Completed:Wait()
+			twRotate:Play()
+			tw3:Play()
+		elseif closed == true then
+			closed = false
+			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
+			local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.52, 0) })
+			local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.012, 0) })
+			local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 0 })
+
+			tw:Play()
+			tw.Completed:Wait()
+			tw2:Play()
+			tw2.Completed:Wait()
 			twRotate:Play()
 			tw3:Play()
 		end
-		function self:HideCloseButton()
-			DRR["1f"].Visible = false
-		end
-			function self:Hide()
-			DDR["1"].Enabled = false
-		end
-		function self:Show()
-			DDR["1"].Enabled = true
-			end
-		function self:Toggle()
-			if closed == false then
-				closed = true
-				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.612, 0) })
-				local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.95, 0) })
-				local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,-0.173, 0) })
-				local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 180 })
-
-				tw:Play()
-				tw.Completed:Wait()
-				tw2:Play()
-				tw2.Completed:Wait()
-				twRotate:Play()
-				tw3:Play()
-			elseif closed == true then
-				closed = false
-				local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
-				local tw3 = twServ:Create(parent.TopBar.TopBarClose, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Position = UDim2.new(0.916, 0,0.52, 0) })
-				local tw2 = twServ:Create(parent.TopBar, TweenInfo.new(0.2, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.012, 0) })
-				local twRotate = twServ:Create(parent.TopBar.TopBarClose.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Quad, Enum.EasingDirection.In), { Rotation = 0 })
-
-				tw:Play()
-				tw.Completed:Wait()
-				tw2:Play()
-				tw2.Completed:Wait()
-				twRotate:Play()
-				tw3:Play()
-			end
-		end
-		function self:SetTheme(color, color2)
-			for i,v in pairs(parent:GetChildren()) do
-				if v:IsA("GuiObject") then
-					pcall(function()
-						if v.BackgroundColor3 == Color3.fromRGB(39, 44, 61) then
-							v.BackgroundColor3 = color
-							GlobalColor1 = color
-						elseif v.BackgroundColor3 == Color3.fromRGB(0, 255, 38) then
-							v.BackgroundColor3 = color2
-							GlobalColor2 = color2
-						end
-					end)
-				end
+	end
+	function self:SetTheme(color, color2)
+		for i,v in pairs(parent:GetChildren()) do
+			if v:IsA("GuiObject") then
+				pcall(function()
+					if v.BackgroundColor3 == Color3.fromRGB(39, 44, 61) then
+						v.BackgroundColor3 = color
+						GlobalColor1 = color
+					elseif v.BackgroundColor3 == Color3.fromRGB(0, 255, 38) then
+						v.BackgroundColor3 = color2
+						GlobalColor2 = color2
+					end
+				end)
 			end
 		end
 	end
