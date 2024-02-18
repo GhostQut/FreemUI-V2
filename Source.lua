@@ -1300,6 +1300,7 @@ function Check()
 				functionCheck = true
 			else
 				functionCheck = false
+				ff = false
 			end
 		end)
 	end
