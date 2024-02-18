@@ -1291,22 +1291,17 @@ parent.TopBar.ProfileMenu.PlayerProfile.TextLabel.Text = game:GetService("Player
 parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
 
 local functionCheck = false
-local ff = false
 	
 
 function UILIB:Load(name, img, direction)
-	ff = true
-	if ff == true then
 		for i, v in pairs(game.CoreGui:GetChildren()) do
 			if v.Name == "DrRay" then
 				v:Destroy()
 				functionCheck = true
 			else
 				functionCheck = false
-				ff = false
 			end
 		end)
-	end
 	if functionCheck == true then
 		local self = setmetatable({}, UILIB)
 		task.spawn(function()
