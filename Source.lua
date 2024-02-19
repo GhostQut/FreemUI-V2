@@ -1,6 +1,3 @@
-if game.CoreGui:FindFirstChild("DrRay") then
-	game.CoreGui.DrRay:Destroy();
-end	
 -- Instances: 147 | Scripts: 0 | Modules: 1
 local DRR = {};
 
