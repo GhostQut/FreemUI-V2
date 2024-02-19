@@ -1292,6 +1292,9 @@ parent.TopBar.ProfileMenu.PlayerProfile.ImageLabel.Image = game:GetService("Play
 
 
 function UILIB:Load(name, img, direction)
+	if game.CoreGui:FindFirstChild("DrRay") then
+		game.CoreGui.DrRay:Destroy();
+	end	
 	local self = setmetatable({}, UILIB)
 	task.spawn(function()
 			local tw = twServ:Create(parent.MainBar, TweenInfo.new(0.4, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), { Position = UDim2.new(0.23, 0,0.212, 0) })
